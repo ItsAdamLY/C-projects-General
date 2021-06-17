@@ -10,7 +10,7 @@ int GetScore(int, int [ARSIZE]);
 
 int main()
 {
-	int bonus;
+	int bonus,i;
 	do {
 	printf("Enter a bonus mark : ");
 	scanf("%d", &bonus);
@@ -20,6 +20,13 @@ int main()
 	} while (bonus < 0 || bonus > 100);
 	
 	Edit(bonus, marks);
+		
+	printf("The new score array is : ");
+	for (i=0; i<ARSIZE; i++)
+	{		
+		printf("%d ", newScore[i]);
+	}
+	printf("\n");
 	
  	system("pause");
 	return 0;
@@ -55,11 +62,5 @@ int GetScore(int bonus, int marks[ARSIZE])
 		else	 	
 		newScore[i] = marks[i]+bonus;
 	}
-	
-	printf("The new score array is : ");
-	for (i=0; i<ARSIZE; i++)
-	{		
-		printf("%d ", newScore[i]);
-	}
-	printf("\n");
+	return newScore[ARSIZE];
 }
